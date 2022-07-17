@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: conversaotemp-front-0
+spec:
+  containers:
+  - name: web
+    image: fabioreina/conversao-temperatura:latest
+    ports:
+    - containerPort: 80
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: conversaotemp-front-1
+  labels: 
+    app: green
+spec:
+  containers:
+  - name: web
+    image: fabioreina/conversao-temperatura:v1
+    ports:
+    - containerPort: 80
+    
