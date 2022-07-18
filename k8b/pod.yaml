@@ -1,11 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: conversaotemp-front-0
+  name: webapp-front-0
+  labels: 
+    app: v1-blue
 spec:
   containers:
   - name: web
-    image: fabioreina/conversao-temperatura:latest
+    image: fabioreina/webapp:v1
     ports:
     - containerPort: 80
 
@@ -13,13 +15,13 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: conversaotemp-front-1
+  name: webapp-front-1
   labels: 
-    app: green
+    app: v2-green
 spec:
   containers:
   - name: web
-    image: fabioreina/conversao-temperatura:v1
+    image: fabioreina/webapp:v2
     ports:
     - containerPort: 80
     
